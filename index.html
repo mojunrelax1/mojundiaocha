@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>陌君拦截 · 用户问卷</title>
+  <meta name="description" content="陌君拦截用户满意度问卷" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <header class="head">
+      <div class="badge">陌君拦截</div>
+      <h1>用户问卷</h1>
+      <p class="sub">感谢你的参与，大约需要 2 分钟</p>
+    </header>
+
+    <form id="surveyForm" novalidate>
+
+      <!-- 基本信息 -->
+      <section class="card">
+        <div class="card-title">
+          <span class="num">基</span>
+          <h2>基本信息</h2>
+        </div>
+
+        <div class="field">
+          <label for="name">你的姓名 <span class="req">*</span></label>
+          <input type="text" id="name" name="name" maxlength="20" required placeholder="请输入你的姓名" />
+        </div>
+
+        <div class="field">
+          <label for="qq">你的 QQ 号</label>
+          <input type="text" id="qq" name="qq" maxlength="20" placeholder="请输入你的 QQ 号" />
+        </div>
+      </section>
+
+      <!-- 第 1 题 -->
+      <section class="card">
+        <div class="card-title">
+          <span class="num">1</span>
+          <h2>你对陌君拦截的第一印象是什么？ <span class="req">*</span></h2>
+        </div>
+        <textarea id="impression" name="impression" rows="3" maxlength="300" required placeholder="自由作答……"></textarea>
+      </section>
+
+      <!-- 第 2 题 -->
+      <section class="card">
+        <div class="card-title">
+          <span class="num">2</span>
+          <h2>你认为陌君拦截怎么样？ <span class="req">*</span></h2>
+        </div>
+        <div class="radios radios-col">
+          <label class="radio-item"><input type="radio" name="rating" value="很稳定" required /> <span>a. 很稳定</span></label>
+          <label class="radio-item"><input type="radio" name="rating" value="不稳定" /> <span>b. 不稳定</span></label>
+          <label class="radio-item"><input type="radio" name="rating" value="UI很好看" /> <span>c. UI 很好看</span></label>
+          <label class="radio-item"><input type="radio" name="rating" value="其他" /> <span>d. 其他</span></label>
+        </div>
+        <input type="text" id="ratingOther" name="ratingOther" maxlength="50" placeholder="若选 d，可在此填写具体内容" class="mt" />
+      </section>
+
+      <!-- 第 3 题 -->
+      <section class="card">
+        <div class="card-title">
+          <span class="num">3</span>
+          <h2>你使用了陌君拦截多久？ <span class="req">*</span></h2>
+        </div>
+        <textarea id="duration" name="duration" rows="2" maxlength="200" required placeholder="自由作答，例如：半年、一年……"></textarea>
+      </section>
+
+      <!-- 第 4 题 -->
+      <section class="card">
+        <div class="card-title">
+          <span class="num">4</span>
+          <h2>你认为陌君拦截未来应该向哪里进步？ <span class="req">*</span></h2>
+        </div>
+        <textarea id="future" name="future" rows="4" maxlength="500" required placeholder="自由作答……"></textarea>
+      </section>
+
+      <!-- 第 5 题 -->
+      <section class="card">
+        <div class="card-title">
+          <span class="num">5</span>
+          <h2>你愿意看到陌君越来越好嘛？ <span class="req">*</span></h2>
+        </div>
+        <div class="radios">
+          <label class="radio-item"><input type="radio" name="wish" value="愿意" required /> <span>a. 愿意</span></label>
+          <label class="radio-item"><input type="radio" name="wish" value="不愿意" /> <span>b. 不愿意</span></label>
+        </div>
+      </section>
+
+      <!-- 提交 -->
+      <section class="submit-area">
+        <button type="submit" class="btn" id="submitBtn">提交问卷</button>
+        <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      </section>
+    </form>
+
+    <footer class="foot">
+      <p>@MOJNBYYDS666频道开发</p>
+    </footer>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+</body>
+</html>
